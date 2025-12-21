@@ -1,0 +1,178 @@
+/* ===========================
+   NEURA-CORE AI — SYSTEM UI
+   =========================== */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    background: radial-gradient(circle at center, #0a0f1f, #000);
+    font-family: "Segoe UI", "Courier New", monospace;
+    color: #e6f1ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* MAIN CONTAINER */
+.container {
+    width: 680px;
+    background: rgba(10, 15, 25, 0.9);
+    border-radius: 16px;
+    padding: 22px;
+    box-shadow:
+        0 0 40px rgba(102, 252, 241, 0.15),
+        inset 0 0 20px rgba(102, 252, 241, 0.08);
+    border: 1px solid rgba(102, 252, 241, 0.25);
+    backdrop-filter: blur(10px);
+}
+
+.ai-container {
+  text-align: center;
+  width: 420px;
+}
+
+/* HEADER */
+.header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding-bottom: 14px;
+    margin-bottom: 18px;
+    border-bottom: 1px solid rgba(102, 252, 241, 0.25);
+}
+
+.header h1 {
+    font-size: 1.6rem;
+    letter-spacing: 2px;
+    margin: 0;
+    color: #66fcf1;
+    text-shadow: 0 0 12px rgba(102, 252, 241, 0.6);
+}
+
+/* AVATAR */
+.avatar {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    border-radius: 50%;
+    border: 2px solid #66fcf1;
+    box-shadow:
+        0 0 12px rgba(102, 252, 241, 0.8),
+        inset 0 0 6px rgba(102, 252, 241, 0.6);
+}
+
+/* CHAT WINDOW */
+.chat-window {
+    height: 320px;
+    padding: 14px;
+    overflow-y: auto;
+    background: linear-gradient(
+        to bottom,
+        rgba(5, 10, 20, 0.95),
+        rgba(0, 0, 0, 0.95)
+    );
+    border-radius: 10px;
+    border: 1px solid rgba(102, 252, 241, 0.25);
+    box-shadow: inset 0 0 18px rgba(0, 255, 255, 0.1);
+}
+
+/* CHAT TEXT */
+.chat-window p {
+    margin: 8px 0;
+    line-height: 1.5;
+}
+
+.chat-window b {
+    color: #66fcf1;
+}
+
+/* INPUT SECTION */
+#msg {
+    width: calc(100% - 110px);
+    margin-top: 14px;
+    padding: 12px;
+    background: rgba(5, 10, 20, 0.9);
+    border: 1px solid rgba(102, 252, 241, 0.35);
+    border-radius: 8px;
+    color: #e6f1ff;
+    font-size: 0.95rem;
+    outline: none;
+    box-shadow: inset 0 0 8px rgba(102, 252, 241, 0.15);
+}
+
+#msg::placeholder {
+    color: rgba(230, 241, 255, 0.5);
+}
+
+/* SEND BUTTON */
+#send {
+    width: 90px;
+    margin-left: 10px;
+    margin-top: 14px;
+    padding: 12px;
+    background: linear-gradient(135deg, #66fcf1, #45a29e);
+    border: none;
+    border-radius: 8px;
+    color: #001a1a;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow:
+        0 0 15px rgba(102, 252, 241, 0.7);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+#send:hover {
+    transform: translateY(-2px);
+    box-shadow:
+        0 0 25px rgba(102, 252, 241, 1);
+}
+
+/* SCROLLBAR (CHROME) */
+.chat-window::-webkit-scrollbar {
+    width: 6px;
+}
+
+.chat-window::-webkit-scrollbar-thumb {
+    background: rgba(102, 252, 241, 0.4);
+    border-radius: 10px;
+}
+
+/* SYSTEM STATUS GLOW */
+.container::after {
+    content: "SYSTEM ONLINE";
+    display: block;
+    text-align: right;
+    margin-top: 10px;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    color: rgba(102, 252, 241, 0.7);
+    text-shadow: 0 0 8px rgba(102, 252, 241, 0.6);
+}
+
+.avatar-wrapper {
+    position: fixed;
+    left: 30px;
+    bottom: 40px;
+    width: 260px;
+}
+
+.ai-head {
+    width: 100%;
+    display: block;
+    filter: drop-shadow(0 0 25px rgba(102,252,241,0.35));
+}
+
+@keyframes headTalk {
+    0%   { transform: scaleY(1); }
+    50%  { transform: scaleY(0.985); }
+    100% { transform: scaleY(1); }
+}
+
+.ai-head.talking {
+    animation: headTalk 0.18s infinite ease-in-out;
+}
+
