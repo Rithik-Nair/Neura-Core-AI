@@ -3,17 +3,50 @@ const msgInput = document.getElementById("msg");
 const chat = document.getElementById("chat");
 const head = document.getElementById("ai-head");
 
+let audio = null;
+
+/* =========================
+   PLAY ELEVENLABS AUDIO
+   ========================= */
+function playVoice() {
+    // Stop previous audio if playing
+    if (audio) {
+        audio.pause();
+        audio = null;
+    }
+
+    // Cache-busting so new audio loads every time
+    audio = new Audio("/static/neura-core.mp3?t=" + Date.now());
+
+    // Lip sync ON
+    head.classList.add("talking");
+
+    audio.play()
+        .then(() => {
+            // Lip sync OFF when audio ends
+            audio.onended = () => {
+                head.classList.remove("talking");
+            };
+        })
+        .catch(err => {
+            console.log("Audio play blocked:", err);
+            head.classList.remove("talking");
+        });
+}
+
+/* =========================
+   SEND MESSAGE
+   ========================= */
 async function sendMessage() {
     const msg = msgInput.value.trim();
     if (!msg) return;
 
+    // Show user message
     chat.innerHTML += `<p><b>You:</b> ${msg}</p>`;
-    
     msgInput.value = "";
     chat.scrollTop = chat.scrollHeight;
 
     try {
-        // MODEL THINKING (NO LIP MOVEMENT)
         const res = await fetch("/chat", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -22,31 +55,36 @@ async function sendMessage() {
 
         const data = await res.json();
 
-        // START SPEAKING
-        head.classList.add("talking");
-
+        // Show AI message with typing effect
         const aiMsg = document.createElement("p");
         aiMsg.innerHTML = "<b>AI:</b> ";
         chat.appendChild(aiMsg);
 
         await typeText(aiMsg, data.reply);
 
-        // STOP SPEAKING
-        head.classList.remove("talking");
+        // 🔊 Play ElevenLabs audio AFTER response
+        playVoice();
 
-    } catch {
+    } catch (err) {
         chat.innerHTML += `<p style="color:red;"><b>System:</b> AI offline</p>`;
+        console.error(err);
     }
 
     chat.scrollTop = chat.scrollHeight;
 }
 
+/* =========================
+   EVENT LISTENERS
+   ========================= */
 sendBtn.addEventListener("click", sendMessage);
+
 msgInput.addEventListener("keydown", e => {
     if (e.key === "Enter") sendMessage();
 });
 
-// Typing effect synced with lip movement
+/* =========================
+   TYPING EFFECT
+   ========================= */
 function typeText(element, text) {
     return new Promise(resolve => {
         let i = 0;
@@ -57,34 +95,6 @@ function typeText(element, text) {
                 clearInterval(interval);
                 resolve();
             }
-        }, 30); // speaking speed
+        }, 30);
     });
-}
-
-function speak(text) {
-    const utterance = new SpeechSynthesisUtterance(text);
-
-    // Voice settings
-    utterance.rate = 1;
-    utterance.pitch = 1;
-    utterance.volume = 1;
-
-    // Select a good voice if available
-    const voices = speechSynthesis.getVoices();
-    const preferred = voices.find(v => v.name.includes("Male") || v.name.includes("David"));
-    if (preferred) utterance.voice = preferred;
-
-    // Lip sync ON
-    utterance.onstart = () => {
-        mouth.classList.add("talking");
-        mouth.style.opacity = "1";
-    };
-
-    // Lip sync OFF
-    utterance.onend = () => {
-        mouth.classList.remove("talking");
-        mouth.style.opacity = "0";
-    };
-
-    speechSynthesis.speak(utterance);
 }

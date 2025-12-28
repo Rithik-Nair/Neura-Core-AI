@@ -36,3 +36,7 @@ ETHICS:
 """
 
 PARAMETER temperature 0.6
+
+# Run these commands after making changes in the Modelfile
+# ollama create neura-core-ai -f Modelfile
+# ollam run neura-core ai

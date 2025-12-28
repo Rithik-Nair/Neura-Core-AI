@@ -1,0 +1,13 @@
+# Secrets
+neura-core-ai-api.txt
+
+# Runtime files
+memory.txt
+
+# Python cache
+__pycache__/
+*.pyc
+
+# OS files
+.DS_Store
+Thumbs.db
