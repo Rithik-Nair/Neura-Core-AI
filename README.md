@@ -12,8 +12,7 @@ It enables intelligent, context-aware conversations with a lightweight and modul
 🎯 Custom AI personality via Modelfile
 🖥️ Simple and clean UI
 ```
-```
-## *🏗️ Project Structure*
+*🏗️ Project Structure*
 Neura-Core-AI/
 │
 ├── static/
