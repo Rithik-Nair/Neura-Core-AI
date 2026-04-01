@@ -10,8 +10,8 @@ It enables intelligent, context-aware conversations with a lightweight and modul
 💾 Persistent chat storage (memory.txt)
 🎯 Custom AI personality via Modelfile
 🖥️ Simple and clean UI
-
-*🏗️ Project Structure*
+```
+## *🏗️ Project Structure*
 Neura-Core-AI/
 │
 ├── static/
