@@ -28,7 +28,7 @@ Neura-Core-AI/
 
 ```
 
-##⚙️ Tech Stack
+## *⚙️ Tech Stack*
 ```
 Frontend: HTML, CSS, JavaScript
 Backend: Python (Flask)
@@ -36,14 +36,14 @@ LLM: Ollama (Local Large Language Model)
 Storage: Text-based memory (memory.txt)
 ```
 
-##🧠 How It Works
+## *🧠 How It Works*
 User enters a message in the UI
 script.js sends the request to backend (app.py)
 Backend reads previous conversation from memory.txt
 Context + user input is sent to Ollama
 AI generates a response
 Response is saved and displayed
-🔧 Setup Instructions
+## *🔧 Setup Instructions
 1. Clone the Repository
 git clone https://github.com/your-username/neura-core-ai.git
 cd neura-core-ai
@@ -87,13 +87,15 @@ ollama run neura-core-ai
 
 ```
 
-#👨‍💻 Author
+## 👨‍💻 Author
 
 Rithik Nair
 AI Developer
 
 ```
-
-#⭐ Acknowledgements
+```
+## *⭐ Acknowledgements*
 Ollama for local LLM support
 Open-source AI community
+
+
