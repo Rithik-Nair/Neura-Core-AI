@@ -94,8 +94,8 @@ Rithik Nair
 AI Developer
 
 ```
+```
+
 ## *⭐ Acknowledgements*
 Ollama for local LLM support
 Open-source AI community
-
-
