@@ -3,15 +3,15 @@ Neura Core AI is a ChatGPT-like conversational AI system built using a locally h
 It enables intelligent, context-aware conversations with a lightweight and modular architecture.
 
 ```
-## *🚀 Features*
+🚀 Features
 💬 ChatGPT-style chat interface
 🧠 Context-aware responses using memory
 ⚡ Runs locally using Ollama (no API cost)
 💾 Persistent chat storage (memory.txt)
 🎯 Custom AI personality via Modelfile
 🖥️ Simple and clean UI
-```
-## *🏗️ Project Structure*
+
+🏗️ Project Structure
 Neura-Core-AI/
 │
 ├── static/
