@@ -90,10 +90,9 @@ ollama run neura-core-ai
 
 ## 👨‍💻 Author
 
+```
 Rithik Nair
 AI Developer
-
-```
 ```
 
 ## *⭐ Acknowledgements*
