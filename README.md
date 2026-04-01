@@ -28,14 +28,15 @@ Neura-Core-AI/
 
 ```
 
-#⚙️ Tech Stack
+##⚙️ Tech Stack
+```
 Frontend: HTML, CSS, JavaScript
 Backend: Python (Flask)
 LLM: Ollama (Local Large Language Model)
 Storage: Text-based memory (memory.txt)
 ```
 
-#🧠 How It Works
+##🧠 How It Works
 User enters a message in the UI
 script.js sends the request to backend (app.py)
 Backend reads previous conversation from memory.txt
