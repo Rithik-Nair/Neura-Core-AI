@@ -1,5 +1,4 @@
 ## *🧠 Neura Core AI*
-
 Neura Core AI is a ChatGPT-like conversational AI system built using a locally hosted LLM (Ollama).
 It enables intelligent, context-aware conversations with a lightweight and modular architecture.
 ```
