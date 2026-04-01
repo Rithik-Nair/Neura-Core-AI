@@ -10,7 +10,7 @@ It enables intelligent, context-aware conversations with a lightweight and modul
 💾 Persistent chat storage (memory.txt)
 🎯 Custom AI personality via Modelfile
 🖥️ Simple and clean UI
-```
+
 *🏗️ Project Structure*
 Neura-Core-AI/
 │
@@ -93,7 +93,6 @@ ollama run neura-core-ai
 Rithik Nair
 AI Developer
 
-```
 ```
 ## *⭐ Acknowledgements*
 Ollama for local LLM support
