@@ -43,7 +43,7 @@ Backend reads previous conversation from memory.txt
 Context + user input is sent to Ollama
 AI generates a response
 Response is saved and displayed
-## *🔧 Setup Instructions
+## *🔧 Setup Instructions*
 1. Clone the Repository
 git clone https://github.com/your-username/neura-core-ai.git
 cd neura-core-ai
