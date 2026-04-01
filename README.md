@@ -2,7 +2,7 @@
 
 Neura Core AI is a ChatGPT-like conversational AI system built using a locally hosted LLM (Ollama).
 It enables intelligent, context-aware conversations with a lightweight and modular architecture.
-
+```
 🚀 Features
 💬 ChatGPT-style chat interface
 🧠 Context-aware responses using memory
@@ -25,12 +25,16 @@ Neura-Core-AI/
 ├── memory.txt      # Stores chat history
 ├── Modelfile       # Ollama model configuration
 └── README.md
-⚙️ Tech Stack
+
+```
+#⚙️ Tech Stack#
 Frontend: HTML, CSS, JavaScript
 Backend: Python (Flask)
 LLM: Ollama (Local Large Language Model)
 Storage: Text-based memory (memory.txt)
-🧠 How It Works
+```
+
+#🧠 How It Works#
 User enters a message in the UI
 script.js sends the request to backend (app.py)
 Backend reads previous conversation from memory.txt
